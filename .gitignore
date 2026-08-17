@@ -1,0 +1,23 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.env
+
+# Streamlit Secrets & Config
+.streamlit/secrets.toml
+
+# Google Cloud credentials & service accounts
+*.json
+
+# SQLite databases & caches
+*.sqlite
+.cache*
+
+# macOS
+.DS_Store

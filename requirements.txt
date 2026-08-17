@@ -1,0 +1,15 @@
+streamlit
+streamlit-folium
+folium
+openmeteo-requests
+requests-cache
+retry_requests
+pandas
+tornado==6.4.2
+watchdog
+google-cloud-aiplatform
+google-auth
+google-genai
+toml
+google-cloud-bigquery
+db-dtypes
