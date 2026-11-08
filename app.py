@@ -14,7 +14,7 @@ import streamlit as st
 from streamlit_folium import st_folium
 
 from domain import (MAX_TEXT, demo_hazard, eligible_reserves, session_identity,
-                    unknown_hazard, validate_image, apply_demo_reviews as apply_overlays, requested_exclusions)
+                    unknown_hazard, validate_image, apply_demo_reviews as apply_overlays, requested_exclusions, reserve_at_marker)
 from repository import DemoRepository, StoreUnavailable
 from assets.display_names import DISPLAY
 
@@ -182,17 +182,30 @@ elif page == "מפת האתרים":
     if not visible:
         st.info("לא נמצאו אתרים התואמים לפרופיל בנתוני הדוגמה.")
     else:
-        selected_name = st.selectbox("בחרו אתר לפרטים", [r["name"] for r in visible])
-        selected = next(r for r in visible if r["name"] == selected_name)
+        options = {r["id"]: r for r in visible}
+        if st.session_state.get("reserve_choice") not in options:
+            st.session_state["reserve_choice"] = visible[0]["id"]
+        selected_id = st.selectbox("בחרו אתר לפרטים", list(options),
+            format_func=lambda ident: options[ident]["name"], key="reserve_choice")
+        selected = options[selected_id]
+
+        def select_map_marker():
+            event = st.session_state.get("reserve_map", {})
+            clicked_id = reserve_at_marker(event.get("last_object_clicked"), visible,
+                                           event.get("last_object_clicked_tooltip"))
+            if clicked_id is not None:
+                st.session_state["reserve_choice"] = clicked_id
         map_col, details_col = st.columns([1.5, 1])
         with map_col:
             m = folium.Map(location=[31.6,35.0], zoom_start=7, tiles="OpenStreetMap")
             colors = {"Green":"green","Yellow":"orange","Red":"red","Closed":"gray"}
             for r in visible:
-                folium.CircleMarker([r["lat"],r["lon"]],radius=7 if r["id"]==selected["id"] else 4,
+                folium.CircleMarker([r["lat"],r["lon"]],radius=6,
                     color=colors.get(r["status"],"gray"),fill=True,
                     tooltip=html.escape(r["name"])).add_to(m)
-            st_folium(m, use_container_width=True, height=480, returned_objects=[])
+            st_folium(m, use_container_width=True, height=480, key="reserve_map",
+                returned_objects=["last_object_clicked", "last_object_clicked_count", "last_object_clicked_tooltip"],
+                on_change=select_map_marker)
         with details_col:
             reserve_card(selected)
             with st.spinner("בודקים מזג אוויר לאתר הנבחר…"):

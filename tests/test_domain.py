@@ -48,6 +48,16 @@ class DomainTests(unittest.TestCase):
             'suggested_status':'Green','short_description':'unverified'})]
         self.assertEqual(apply_demo_reviews(rows,reports)[0]['status'],'Closed')
 
+    def test_map_click_selects_only_a_visible_marker(self):
+        from domain import reserve_at_marker
+        rows=[dict(id=7,name='North',lat=32.932,lon=35.691),dict(id=21,name='South',lat=30.611,lon=34.803)]
+        self.assertEqual(reserve_at_marker({'lat':30.611,'lng':34.803},rows),21)
+        self.assertEqual(reserve_at_marker({'lat':30.6114,'lng':34.8032},rows,'South'),21)
+        self.assertIsNone(reserve_at_marker({'lat':30.6114,'lng':34.8032},rows[:1],'South'))
+        for click in [None, {}, {'lat':'bad','lng':35}, {'lat':31,'lng':35}]:
+            self.assertIsNone(reserve_at_marker(click,rows))
+        self.assertIsNone(reserve_at_marker({'lat':30.611,'lng':34.803},rows[:1]))
+
     def test_cloud_runtime_never_loads_local_keys(self):
         from unittest.mock import patch
         from auth_manager import get_credentials

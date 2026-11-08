@@ -144,3 +144,21 @@ def requested_exclusions(question, rows, vehicle):
                 reason = 'סוג הגישה באתר אינו תואם לפרופיל שבחרתם'
             rejected.append(f"{row['name']}: {reason}.")
     return rejected
+
+
+def reserve_at_marker(click, reserves, tooltip=None):
+    """Resolve only an actual visible marker; map-background clicks select nothing."""
+    if not isinstance(click, dict):
+        return None
+    if isinstance(tooltip, str):
+        import html
+        name = html.unescape(tooltip).strip()
+        match = next((r['id'] for r in reserves if r.get('name') == name), None)
+        if match is not None:
+            return match
+    try:
+        lat, lon = float(click['lat']), float(click['lng'])
+    except (KeyError, TypeError, ValueError):
+        return None
+    return next((r['id'] for r in reserves
+                 if abs(float(r['lat'])-lat)<1e-6 and abs(float(r['lon'])-lon)<1e-6), None)

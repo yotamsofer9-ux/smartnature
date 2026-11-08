@@ -1,10 +1,10 @@
 {
-  "image": "us-central1-docker.pkg.dev/yotamsofer-513010/smartnature/app@sha256:e1ec2fb148006145c40a1b9ecd855fd6ca5d8d2255308aef14b06c28ee9d0a63",
-  "image_tag": "us-central1-docker.pkg.dev/yotamsofer-513010/smartnature/app:demo-eaa10b77440f",
+  "image": "us-central1-docker.pkg.dev/yotamsofer-513010/smartnature/app@sha256:f8a1bbb505a4377c6ff6bf7a9778faa1d11af83a05b0b29e2c31430509f5ae23",
+  "image_tag": "us-central1-docker.pkg.dev/yotamsofer-513010/smartnature/app:demo-54a667f0dec6",
   "file_sha256": {
-    "app.py": "af4a36fdbe7ce4af866451c711343ebeaf099c0aaf577b482932c956896414b9",
+    "app.py": "674f3cc6805f66eeafa10c615d19c6136f6141f171da8fb7b812e68e9d726109",
     "auth_manager.py": "ce944f89e87b06406c55d087947479fe72dff9a11583f5574b9cc47791428153",
-    "domain.py": "d7e5de8b00fcadffce08d15c69efdef8baa18dc779535d8fedabee6ca42aa0bb",
+    "domain.py": "c25cfee82dc993e55cf30accddf477aee65c7c49a8eff60f41c9df9bce8d0e13",
     "ai_service.py": "6e79b594f6543e65ebeebb33131c096c8fe475941bf8c620d42918833c2d966d",
     "repository.py": "4e95bbdb1fe51d621a674ecf8917a6739db7fa748298148827e6fc9954d1e6c9",
     "requirements.txt": "c2077ddec55abaf2e3a1c6a152763c4da90bbf6007d9f78f7967d5937084504d",
@@ -12,11 +12,11 @@
     "assets/reserves_demo.csv": "0302953be4499fd4d827fe2593e2b13dd6f193f43cac1758b861906e4205968f",
     "assets/display_names.py": "53cc61c081bbd3b67466bd7f997f4b2caacf86fba204c777f95368abd8a1819b",
     ".streamlit/config.toml": "002bf7be42cd14472b1d7f157f060ba946e6917d55564f4a12f3f759996f6b98",
-    "tests/test_domain.py": "603fa3cb45029012c937cb63e0731e2c4b202db8e7a7f72b2c9c5f65cb2b9b43",
+    "tests/test_domain.py": "804e79651b890ba52c29afb9ea957fbd9e4ea386993f0f17a5b764607243a5da",
     "tests/test_ui.py": "dd8a5fc2d9c31a7573be7ef1976442a119a52da06039674434a26f869b24b472"
   },
-  "build_id": "15c35820-6d27-48b6-a8a2-0279d876c453",
+  "build_id": "0b26897c-e362-4987-b6f4-14f5e271c53d",
   "status": "SUCCESS",
-  "created_at": "2026-11-08T10:51:32.224327+00:00",
-  "fingerprint": "eaa10b77440f1a32b1610ce0795f3c74d86d3339cc3e766f91f31a1b3e1af095"
+  "created_at": "2026-11-08T12:00:18.699540+00:00",
+  "fingerprint": "54a667f0dec6b916780f790ff9c8694fc27b5034a177960ced54f77007803628"
 }
