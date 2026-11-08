@@ -1,8 +1,8 @@
 {
-  "image": "us-central1-docker.pkg.dev/yotamsofer-513010/smartnature/app@sha256:f8a1bbb505a4377c6ff6bf7a9778faa1d11af83a05b0b29e2c31430509f5ae23",
-  "image_tag": "us-central1-docker.pkg.dev/yotamsofer-513010/smartnature/app:demo-54a667f0dec6",
+  "image": "us-central1-docker.pkg.dev/yotamsofer-513010/smartnature/app@sha256:7b8ebad969776ed58f78c12bc81a92a2e14b0ac1c53ee14b3db6065fe75adac8",
+  "image_tag": "us-central1-docker.pkg.dev/yotamsofer-513010/smartnature/app:demo-6fa515aabad9",
   "file_sha256": {
-    "app.py": "674f3cc6805f66eeafa10c615d19c6136f6141f171da8fb7b812e68e9d726109",
+    "app.py": "199f3afdacf762a358ebc5041cce526264bf0c267c4859da87e2a0802bcaafeb",
     "auth_manager.py": "ce944f89e87b06406c55d087947479fe72dff9a11583f5574b9cc47791428153",
     "domain.py": "c25cfee82dc993e55cf30accddf477aee65c7c49a8eff60f41c9df9bce8d0e13",
     "ai_service.py": "6e79b594f6543e65ebeebb33131c096c8fe475941bf8c620d42918833c2d966d",
@@ -15,8 +15,8 @@
     "tests/test_domain.py": "804e79651b890ba52c29afb9ea957fbd9e4ea386993f0f17a5b764607243a5da",
     "tests/test_ui.py": "dd8a5fc2d9c31a7573be7ef1976442a119a52da06039674434a26f869b24b472"
   },
-  "build_id": "0b26897c-e362-4987-b6f4-14f5e271c53d",
+  "build_id": "9c07fb3e-899c-4125-b63c-a1515e8a2d15",
   "status": "SUCCESS",
-  "created_at": "2026-11-08T12:00:18.699540+00:00",
-  "fingerprint": "54a667f0dec6b916780f790ff9c8694fc27b5034a177960ced54f77007803628"
+  "created_at": "2026-11-08T12:15:10.809486+00:00",
+  "fingerprint": "6fa515aabad989274a6544855ea2b2005f27b236a84709b6a82a23373c73b221"
 }
