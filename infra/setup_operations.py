@@ -5,6 +5,7 @@ Requires a deployed public URL. Preview only unless --apply is supplied.
 import argparse
 import json
 import subprocess
+import time
 from urllib.parse import urlparse
 from google.auth.transport.requests import AuthorizedSession
 from google.oauth2.credentials import Credentials
@@ -25,14 +26,20 @@ def main():
     assert host and args.url.startswith('https://')
     if not args.apply:
         print(json.dumps({'public_host':host,'uptime_interval_seconds':300,
-                          'monthly_budget_usd':50,'daily_snapshots_retained_days':30,
+                          'monthly_budget_ils':160,'daily_snapshots_retained_days':30,
                           'not_applied':True},indent=2)); return
     gc('services','enable','monitoring.googleapis.com','billingbudgets.googleapis.com',
        'bigquerydatatransfer.googleapis.com',f'--project={PROJECT}')
-    session=AuthorizedSession(Credentials(gc('auth','print-access-token')))
+    session=AuthorizedSession(Credentials(gc('auth','print-access-token'), quota_project_id=PROJECT))
     def api(method,url,**kwargs):
-        response=session.request(method,url,timeout=30,**kwargs)
-        response.raise_for_status()
+        for attempt in range(3):
+            response=session.request(method,url,timeout=30,**kwargs)
+            if response.status_code not in {429,500,502,503,504}:
+                break
+            time.sleep(2*(attempt+1))
+        if not response.ok:
+            message=json.dumps(response.json().get('error',{}))
+            raise RuntimeError(f"{response.status_code}: {message}")
         return response.json() if response.content else {}
     base=f'https://monitoring.googleapis.com/v3/projects/{PROJECT}'
     channels=api('GET',base+'/notificationChannels').get('notificationChannels',[])
@@ -64,29 +71,38 @@ def main():
     number=gc('projects','describe',PROJECT,'--format=value(projectNumber)')
     budget_url=f'https://billingbudgets.googleapis.com/v1/{billing}/budgets'
     budgets=api('GET',budget_url).get('budgets',[])
-    if not any(b.get('displayName')=='Smart Nature demo' for b in budgets):
-        api('POST',budget_url,json={
+    existing_budget=next((b for b in budgets if b.get('displayName')=='Smart Nature demo'),None)
+    desired_amount={'specifiedAmount':{'currencyCode':'ILS','units':'160'}}
+    if existing_budget and existing_budget.get('amount') != desired_amount:
+        api('PATCH','https://billingbudgets.googleapis.com/v1/'+existing_budget['name'],
+            params={'updateMask':'amount'},json={'name':existing_budget['name'],'amount':desired_amount})
+    if not existing_budget:
+        created_budget=api('POST',budget_url,json={
             'displayName':'Smart Nature demo','budgetFilter':{'projects':[f'projects/{number}']},
-            'amount':{'specifiedAmount':{'currencyCode':'USD','units':'50'}},
+            'amount':desired_amount,
             'thresholdRules':[{'thresholdPercent':0.5},{'thresholdPercent':0.9},{'thresholdPercent':1.0}],
-            'allUpdatesRule':{'monitoringNotificationChannels':[channel['name']],
+            'notificationsRule':{'monitoringNotificationChannels':[channel['name']],
                               'disableDefaultIamRecipients':False}})
+        print('Created budget amount: '+json.dumps(created_budget['amount']),flush=True)
     # Snapshots exclude guest conversations and photos to respect demo retention.
     bq=bigquery.Client(project=PROJECT,credentials=session.credentials)
     ds=bigquery.Dataset(f'{PROJECT}.smartnature_backups'); ds.location='us-central1'
     ds.default_table_expiration_ms=30*86400*1000
     bq.create_dataset(ds,exists_ok=True,timeout=30)
+    api('POST',f'https://serviceusage.googleapis.com/v1beta1/projects/{number}/services/bigquerydatatransfer.googleapis.com:generateServiceIdentity',json={})
     backup_account=f'smartnature-backup@{PROJECT}.iam.gserviceaccount.com'
     accounts=gc('iam','service-accounts','list',f'--project={PROJECT}','--format=value(email)').splitlines()
     if backup_account not in accounts:
         gc('iam','service-accounts','create','smartnature-backup',f'--project={PROJECT}')
     gc('projects','add-iam-policy-binding',PROJECT,f'--member=serviceAccount:{backup_account}',
        '--role=roles/bigquery.jobUser','--condition=None','--format=none')
-    for dataset_id,role in [('smart_nature_DB','READER'),('smartnature_backups','WRITER')]:
+    gc('iam','service-accounts','add-iam-policy-binding',backup_account,f'--project={PROJECT}',
+       f'--member=serviceAccount:service-{number}@gcp-sa-bigquerydatatransfer.iam.gserviceaccount.com',
+       '--role=roles/iam.serviceAccountTokenCreator','--format=none')
+    for dataset_id,role in [('smart_nature_DB','READER'),('smartnature_backups','OWNER')]:
         dataset=bq.get_dataset(f'{PROJECT}.{dataset_id}',timeout=30)
-        entries=list(dataset.access_entries)
-        if not any(e.entity_id==backup_account for e in entries):
-            entries.append(bigquery.AccessEntry(role,'userByEmail',backup_account))
+        entries=[e for e in dataset.access_entries if e.entity_id!=backup_account]
+        entries.append(bigquery.AccessEntry(role,'userByEmail',backup_account))
         dataset.access_entries=entries
         bq.update_dataset(dataset,['access_entries'],timeout=30)
     query='\n'.join(
@@ -99,7 +115,7 @@ def main():
             'displayName':'Smart Nature daily snapshots','dataSourceId':'scheduled_query',
             'schedule':'every 24 hours','params':{'query':query},
             'emailPreferences':{'enableFailureEmail':True}})
-    print('Monitoring, owner notifications, $50 budget and daily snapshots configured.')
+    print('Monitoring, owner notifications, ILS 160 budget and daily snapshots configured.')
     print('A budget alert does not enforce a spending cap.')
 
 

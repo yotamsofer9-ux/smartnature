@@ -1,0 +1,29 @@
+{
+  "url": "https://smartnature-7fr5l6n5la-uc.a.run.app",
+  "verified_at": "2026-11-08T11:29:35.652296+00:00",
+  "revision": "smartnature-verified-20261108",
+  "public_health_ok": true,
+  "warm_instances": 1,
+  "max_instances": 1,
+  "budget": {
+    "currencyCode": "ILS",
+    "units": "160"
+  },
+  "uptime_monitoring": true,
+  "latest_probe_values": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "daily_backup_state": "SUCCEEDED",
+  "snapshot_rows": {
+    "users": 3,
+    "reserves": 50,
+    "reports": 3,
+    "chat_history": 16
+  },
+  "snapshot_retention_days": 30
+}

@@ -32,3 +32,5 @@ backups/
 # Verification metadata contains no secrets or record contents
 !infra/restoration_audit.json
 !infra/release_manifest.json
+
+!infra/operations_result.json
