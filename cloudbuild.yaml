@@ -1,0 +1,25 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: ['build', '--target', 'test', '-t', 'smartnature-tests', '.']
+  - name: gcr.io/cloud-builders/docker
+    args: ['build', '--target', 'production', '-t', '${_IMAGE}', '.']
+  - name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        set -euo pipefail
+        docker run -d --name smartnature-smoke -e SMARTNATURE_OFFLINE=1 ${_IMAGE}
+        for attempt in $$(seq 1 30); do
+          if docker exec smartnature-smoke python -c "import urllib.request; assert urllib.request.urlopen('http://127.0.0.1:8080/_stcore/health', timeout=2).status == 200"; then
+            docker stop smartnature-smoke
+            exit 0
+          fi
+          sleep 1
+        done
+        docker logs smartnature-smoke
+        exit 1
+images: ['${_IMAGE}']
+options:
+  logging: CLOUD_LOGGING_ONLY
+timeout: 1200s

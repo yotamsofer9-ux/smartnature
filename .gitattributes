@@ -1,0 +1,2 @@
+# Preserve the seed's standard CSV line endings and release fingerprint.
+assets/reserves_demo.csv -text whitespace=cr-at-eol

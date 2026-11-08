@@ -1,0 +1,22 @@
+{
+  "image": "us-central1-docker.pkg.dev/yotamsofer-513010/smartnature/app@sha256:e1ec2fb148006145c40a1b9ecd855fd6ca5d8d2255308aef14b06c28ee9d0a63",
+  "image_tag": "us-central1-docker.pkg.dev/yotamsofer-513010/smartnature/app:demo-eaa10b77440f",
+  "file_sha256": {
+    "app.py": "af4a36fdbe7ce4af866451c711343ebeaf099c0aaf577b482932c956896414b9",
+    "auth_manager.py": "ce944f89e87b06406c55d087947479fe72dff9a11583f5574b9cc47791428153",
+    "domain.py": "d7e5de8b00fcadffce08d15c69efdef8baa18dc779535d8fedabee6ca42aa0bb",
+    "ai_service.py": "6e79b594f6543e65ebeebb33131c096c8fe475941bf8c620d42918833c2d966d",
+    "repository.py": "4e95bbdb1fe51d621a674ecf8917a6739db7fa748298148827e6fc9954d1e6c9",
+    "requirements.txt": "c2077ddec55abaf2e3a1c6a152763c4da90bbf6007d9f78f7967d5937084504d",
+    "Dockerfile": "5170e312fdc0a0310d3c2eaa5e9528c00f576950ac3dba3d12c4ab7f4da8082f",
+    "assets/reserves_demo.csv": "0302953be4499fd4d827fe2593e2b13dd6f193f43cac1758b861906e4205968f",
+    "assets/display_names.py": "53cc61c081bbd3b67466bd7f997f4b2caacf86fba204c777f95368abd8a1819b",
+    ".streamlit/config.toml": "002bf7be42cd14472b1d7f157f060ba946e6917d55564f4a12f3f759996f6b98",
+    "tests/test_domain.py": "603fa3cb45029012c937cb63e0731e2c4b202db8e7a7f72b2c9c5f65cb2b9b43",
+    "tests/test_ui.py": "dd8a5fc2d9c31a7573be7ef1976442a119a52da06039674434a26f869b24b472"
+  },
+  "build_id": "15c35820-6d27-48b6-a8a2-0279d876c453",
+  "status": "SUCCESS",
+  "created_at": "2026-11-08T10:51:32.224327+00:00",
+  "fingerprint": "eaa10b77440f1a32b1610ce0795f3c74d86d3339cc3e766f91f31a1b3e1af095"
+}

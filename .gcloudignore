@@ -1,0 +1,14 @@
+.git/
+.gitignore
+.gcloudignore
+venv/
+.venv/
+.python-build/
+backups/
+.streamlit/secrets.toml
+*.json
+*.sqlite
+__pycache__/
+**/__pycache__/
+*.log
+.cache*

@@ -1,3 +1,8 @@
+"""Historical examples retained for provenance only. Not imported by the demo.
+
+Statuses, weather, accessibility and safety claims below are not current or verified.
+Runtime instructions and rules are in domain.py.
+"""
 
 KNOWLEDGE_BASE = [
     # Part 1: Logistics & Vehicle Adaptation

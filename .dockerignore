@@ -1,0 +1,17 @@
+*
+!Dockerfile
+!requirements.txt
+!app.py
+!auth_manager.py
+!ai_service.py
+!domain.py
+!repository.py
+!SmartNatureLogo.jpeg
+!assets/
+!assets/reserves_demo.csv
+!.streamlit/
+!.streamlit/config.toml
+
+!tests/
+!tests/*.py
+!assets/display_names.py

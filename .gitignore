@@ -21,3 +21,14 @@ ENV/
 
 # macOS
 .DS_Store
+
+# Private recovery exports and build environments
+backups/
+.venv/
+.python-build/
+.pytest_cache/
+*.log
+
+# Verification metadata contains no secrets or record contents
+!infra/restoration_audit.json
+!infra/release_manifest.json

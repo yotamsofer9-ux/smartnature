@@ -1,0 +1,51 @@
+id,name,lat,lon,status,description,accessibility,last_update
+7,Yehudiya Forest,32.932,35.691,Closed,Basalt canyon with deep pools.,Hiking Only,2026-01-11 17:13:01+00:00
+21,Ramon Crater Trail,30.611,34.803,Green,"Deep desert terrain, rugged scenery.",4x4 Only,2026-01-11 12:00:00+00:00
+28,Mount Qatros,31.652,34.981,Green,Technical ascent in Judean Lowlands.,4x4 Only,2026-01-11 15:00:00+00:00
+25,Maraba Ridge,30.702,35.011,Green,Scenic ridge drive overlooking the Arava.,4x4 Only,2026-01-11 11:45:00+00:00
+30,Ridge of the Five,31.854,35.082,Green,Off-road trail near Jerusalem.,4x4 Only,2026-01-11 12:15:00+00:00
+13,Ye-elim Night Camp,31.251,35.302,Green,Desert camping near Arad and Masada.,4x4 Only,2026-01-11 10:00:00+00:00
+20,Nitzana Dunes Camp,30.881,34.422,Green,Camping experience on soft desert dunes.,4x4 Only,2026-01-11 16:30:00+00:00
+23,Mount Karkom,30.287,34.745,Green,Remote site with ancient rock art.,4x4 Only,2026-01-11 06:00:00+00:00
+10,Castel National Park,31.794,35.145,Green,Historical battle site with trenches.,Accessible,2026-01-11 14:15:00+00:00
+37,Coral Beach Eilat,29.511,34.922,Green,Snorkeling in northernmost coral reef.,Accessible,2026-01-11 14:00:00+00:00
+35,Apollonia,32.195,34.806,Green,Crusader fortress over the sea.,Accessible,2026-01-11 16:20:00+00:00
+33,Ein Afek,32.846,35.111,Green,Restored swampland and fortress.,Accessible,2026-01-11 11:00:00+00:00
+3,Tel Dan Reserve,33.249,35.652,Green,Shaded trails along the strongest spring in Israel.,Accessible,2026-01-11 09:00:00+00:00
+14,Amiaz Plain Camp,31.133,35.352,Green,Located near Mount Sodom and the Flour Cave.,Accessible,2026-01-11 08:00:00+00:00
+17,Mishmar Hanegab Camp,31.341,34.712,Green,Spacious desert camping site.,Accessible,2026-01-11 12:00:00+00:00
+46,Tzipori Park,32.752,35.278,Green,Beautiful mosaics and ancient city.,Accessible,2026-01-11 13:30:00+00:00
+43,Avdat National Park,30.794,34.771,Green,Nabatean city on Incense Route.,Accessible,2026-01-11 13:30:00+00:00
+47,Caesarea Harbor,32.501,34.892,Green,Herods port and Roman theater.,Accessible,2026-01-11 12:00:00+00:00
+12,Hurvat Homama Camp,32.992,35.395,Green,Night camp at the foot of Mount Meron.,Accessible,2026-01-11 09:30:00+00:00
+45,Nahal Me-arot,32.671,34.966,Green,Prehistoric caves world heritage.,Accessible,2026-01-11 10:00:00+00:00
+34,Beit Guvrin,31.605,34.898,Green,Thousands of bell-shaped caves.,Accessible,2026-01-11 09:45:00+00:00
+11,Be-erot Night Camp,30.615,34.881,Green,Official campsite in the heart of Ramon Crater.,Accessible,2026-01-11 17:00:00+00:00
+9,Stalactite Cave,31.754,35.025,Green,Incredible formations of stalactites.,Accessible,2026-01-11 13:00:00+00:00
+16,Masada West Camp,31.314,35.351,Green,Campground on the Roman Ramp side.,Accessible,2026-01-11 07:00:00+00:00
+39,Ashkelon Park,31.666,34.548,Green,Ancient Canaanite gate and beach.,Accessible,2026-01-11 13:00:00+00:00
+36,Agamon Hula,33.106,35.611,Green,World-class birdwatching site.,Accessible,2026-01-11 08:15:00+00:00
+19,Carmel HaPituach,32.731,35.021,Green,Wooded campsite in the Carmel Forest.,Accessible,2026-01-11 12:00:00+00:00
+42,Gamla Reserve,32.905,35.741,Green,Vulture nesting and ancient ruins.,Hiking Only,2026-01-11 12:00:00+00:00
+49,Nahal Sorek,31.748,35.051,Green,Hiking along the historical railway.,Hiking Only,2026-01-11 11:10:00+00:00
+1,En Gedi - David Stream,31.465,35.394,Green,Desert oasis with waterfalls and ibex spotting.,Hiking Only,2026-01-11 10:00:00+00:00
+2,Nahal Amud,32.915,35.491,Green,Perennial stream with ancient flour mills.,Hiking Only,2026-01-11 12:00:00+00:00
+50,Small Crater View,30.957,35.204,Green,Quiet overlook into Makhtesh Katan.,Hiking Only,2026-01-11 08:45:00+00:00
+41,Montfort Castle,33.044,35.226,Green,Teutonic fortress in Western Galilee.,Hiking Only,2026-01-11 10:20:00+00:00
+4,Arbel Nature Reserve,32.824,35.506,Green,Vertical cliff overlooking the Sea of Galilee.,Hiking Only,2026-01-11 11:30:00+00:00
+8,Nahal Ayun,33.267,35.583,Green,Canyon with four waterfalls near Metula.,Hiking Only,2026-01-11 10:20:00+00:00
+40,Nahal Prat,31.833,35.301,Green,Cool spring water in Judean Desert.,Private Car,2026-01-11 10:30:00+00:00
+18,Lotz Cisterns Camp,30.502,34.615,Green,High altitude camp with ancient cisterns.,Private Car,2026-01-11 09:00:00+00:00
+48,Mount Gilboa Iris,32.502,35.421,Green,Seasonal flower blooms and views.,Private Car,2026-01-11 09:30:00+00:00
+31,Dor Habonim Beach,32.614,34.921,Green,Indented coastline with lagoons.,Private Car,2026-01-11 15:30:00+00:00
+38,Timna Park,29.787,34.964,Red,"שיטפון חמור בנחל תמנע, המסלול חסום",4x4 & Private,2026-01-22 20:02:06+00:00
+26,Gas Pipes Trail,30.957,35.154,Red,Extreme 4x4 trail near Small Crater.,4x4 Only,2026-01-11 10:00:00+00:00
+24,Nahal Sekher,31.112,34.815,Red,"שיטפון בנחל, סכנת חיים",4x4 Only,2026-02-14 14:17:20+00:00
+6,Banias Waterfall,33.248,35.694,Red,Powerful waterfall and Roman ruins.,Accessible,2026-01-11 12:00:00+00:00
+32,Alexander River,32.394,34.868,Red,"שיטפון חמור בנחל אלכסנדר, סכנה מיידית",Accessible,2026-02-14 14:09:59+00:00
+22,Nahal Zin Trail,30.825,34.773,Yellow,Long desert trail with springs.,4x4 Only,2026-01-11 08:30:00+00:00
+27,Nahal Tavor 4x4,32.628,35.521,Yellow,"Lush green crossing, muddy paths.",4x4 Only,2026-01-11 09:50:00+00:00
+29,Nahal Neqarot,30.654,34.952,Yellow,Dynamic riverbed with loose gravel.,4x4 Only,2026-01-11 13:20:00+00:00
+15,Nahal Snir Camp,33.235,35.621,Yellow,Camping near the water in the Upper Galilee.,Accessible,2026-01-11 11:30:00+00:00
+5,Mount Meron Summit,32.999,35.412,Yellow,"The highest peak in the Galilee, 360-degree views.",Hiking Only,2026-01-11 08:45:00+00:00
+44,Nimrod Fortress,33.252,35.715,Yellow,Largest Muslim-era fortress.,Private Car,2026-01-11 11:30:00+00:00

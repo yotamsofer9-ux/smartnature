@@ -1,0 +1,47 @@
+{
+  "tables": [
+    {
+      "table": "users",
+      "source_rows": 3,
+      "target_rows": 3,
+      "content_matches": true,
+      "schema_matches": true
+    },
+    {
+      "table": "reserves",
+      "source_rows": 50,
+      "target_rows": 50,
+      "content_matches": true,
+      "schema_matches": true
+    },
+    {
+      "table": "reports",
+      "source_rows": 3,
+      "target_rows": 3,
+      "content_matches": true,
+      "schema_matches": true
+    },
+    {
+      "table": "chat_history",
+      "source_rows": 16,
+      "target_rows": 16,
+      "content_matches": true,
+      "schema_matches": true
+    }
+  ],
+  "file_sha256": {
+    "app.py": "af4a36fdbe7ce4af866451c711343ebeaf099c0aaf577b482932c956896414b9",
+    "auth_manager.py": "ce944f89e87b06406c55d087947479fe72dff9a11583f5574b9cc47791428153",
+    "requirements.txt": "c2077ddec55abaf2e3a1c6a152763c4da90bbf6007d9f78f7967d5937084504d",
+    "assets/knowledge_base.py": "cd851d1fd9f6a4fd8df0d6e8b018454b134f5ba73f22e7708625e7917b4420b3",
+    "ai_service.py": "6e79b594f6543e65ebeebb33131c096c8fe475941bf8c620d42918833c2d966d",
+    "domain.py": "d7e5de8b00fcadffce08d15c69efdef8baa18dc779535d8fedabee6ca42aa0bb",
+    "repository.py": "4e95bbdb1fe51d621a674ecf8917a6739db7fa748298148827e6fc9954d1e6c9",
+    "assets/reserves_demo.csv": "0302953be4499fd4d827fe2593e2b13dd6f193f43cac1758b861906e4205968f",
+    "assets/display_names.py": "53cc61c081bbd3b67466bd7f997f4b2caacf86fba204c777f95368abd8a1819b"
+  },
+  "initial_ui_exceptions": 0,
+  "ui_error_count": 0,
+  "weather_mocked": true,
+  "interactive_flows_tested": false
+}

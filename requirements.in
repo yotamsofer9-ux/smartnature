@@ -1,0 +1,12 @@
+streamlit>=1.45,<2
+streamlit-folium>=0.25,<1
+folium>=0.19,<1
+requests>=2.32,<3
+pandas>=2.2,<3
+google-auth>=2.38,<3
+google-genai>=1.0,<3
+toml>=0.10,<1
+google-cloud-bigquery>=3.30,<4
+google-cloud-storage>=3,<4
+db-dtypes>=1.4,<2
+Pillow>=11,<13
